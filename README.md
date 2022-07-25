@@ -54,7 +54,7 @@ $ npm run dev
     }</br>
     - body: {</br>      
       "name": $"Titulo do arquivo",</br>
-      "pdfUrl":$"<url do arquivo em pdf>",</br>
+      "pdfUrl":$http://pdf.com</br>
       "categoryId":$número da id referente à categoria,</br>
       "teacherDisciplineId" : $número da id referente à realçaõ teacherDIsciplines</br>
     }</br>
@@ -79,3 +79,39 @@ $ npm run dev
         "Authorization": "Bearer token"</br>
     }</br>
     - body: {}</br>
+
+# Inserção de dados para testes:
+
+// módulos do curso</br>
+INSERT INTO terms ("number") VALUES (1);</br>
+INSERT INTO terms ("number") VALUES (2);</br>
+INSERT INTO terms ("number") VALUES (3);</br>
+INSERT INTO terms ("number") VALUES (4);</br>
+INSERT INTO terms ("number") VALUES (5);</br>
+INSERT INTO terms ("number") VALUES (6);</br>
+
+// tipos de provas</br>
+INSERT INTO categories ("name") VALUES ('Projeto');</br>
+INSERT INTO categories ("name") VALUES ('Prática');</br>
+INSERT INTO categories ("name") VALUES ('Recuperação');</br>
+
+// professores(as)</br>
+INSERT INTO teachers ("name") VALUES ('Diego Pinho');</br>
+INSERT INTO teachers ("name") VALUES ('Bruna Hamori');</br>
+
+// disciplinas</br>
+INSERT INTO disciplines ("name", "termId") VALUES ('HTML e CSS', 1);</br>
+INSERT INTO disciplines ("name", "termId") VALUES ('JavaScript', 2);</br>
+INSERT INTO disciplines ("name", "termId") VALUES ('React', 3);</br>
+INSERT INTO disciplines ("name", "termId") VALUES ('Humildade', 1);</br>
+INSERT INTO disciplines ("name", "termId") VALUES ('Planejamento', 2);</br>
+INSERT INTO disciplines ("name", "termId") VALUES ('Autoconfiança', 3);</br>
+
+// professores(as) e disciplinas</br>
+INSERT INTO "teachersDisciplines" ("teacherId", "disciplineId") VALUES (1, 1);</br>
+INSERT INTO "teachersDisciplines" ("teacherId", "disciplineId") VALUES (1, 2);</br>
+INSERT INTO "teachersDisciplines" ("teacherId", "disciplineId") VALUES (1, 3);</br>
+INSERT INTO "teachersDisciplines" ("teacherId", "disciplineId") VALUES (2, 4);</br>
+INSERT INTO "teachersDisciplines" ("teacherId", "disciplineId") VALUES (2, 5);</br>
+INSERT INTO "teachersDisciplines" ("teacherId", "disciplineId") VALUES (2, 6);</br>
+
