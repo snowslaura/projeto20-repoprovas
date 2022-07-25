@@ -83,9 +83,7 @@ async function login(){
     expect(token).not.toBeUndefined();
     expect(signInstatus).toBe(200) 
     
-    const tokenData = JSON.parse(token)
-    console.log(tokenData.token);
-    
+    const tokenData = JSON.parse(token)   
     
     return tokenData.token
             

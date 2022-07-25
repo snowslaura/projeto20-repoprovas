@@ -87,6 +87,60 @@ describe("POST /sign-in", () => {
            
     });
    
+
+    it("given an invalid password should return 401", async ()=>{
+        const bodySignup = {
+            "email": "teste1@driven.com",
+            "password": "1234567890"
+        };
+
+        const signUpResult = await supertest(app).post("/signup").send(bodySignup);
+        const signUpStatus = signUpResult.status;        
+        expect(signUpStatus).toEqual(201);
+
+        const createdUser = await prisma.users.findUnique({
+            where: { email: bodySignup.email }
+        });
+
+        expect(createdUser).not.toBeNull();
+
+        const bodySignIn = {
+            "email": "teste1@driven.com",
+            "password": "1234567880"
+        };
+
+        const result = await supertest(app).post("/sign-in").send(bodySignIn);
+        const status = result.status;
+        
+        expect(status).toEqual(401);
+    })
+
+    it("given an invalid email should return 401", async ()=>{
+        const bodySignup = {
+            "email": "teste1@driven.com",
+            "password": "1234567890"
+        };
+
+        const signUpResult = await supertest(app).post("/signup").send(bodySignup);
+        const signUpStatus = signUpResult.status;        
+        expect(signUpStatus).toEqual(201);
+
+        const createdUser = await prisma.users.findUnique({
+            where: { email: bodySignup.email }
+        });
+
+        expect(createdUser).not.toBeNull();
+
+        const bodySignIn = {
+            "email": "testeErrado@driven.com",
+            "password": "1234567890"
+        };
+
+        const result = await supertest(app).post("/sign-in").send(bodySignIn);
+        const status = result.status;
+        
+        expect(status).toEqual(401);
+    })   
 });
 
 
