@@ -11,9 +11,8 @@ export type CreateUserData = Omit<Users, "id">;
 
 async function createUser(user: CreateUserData) {
   const existingUser = await userRepository.findUserByEmail(user.email);
-
   if (existingUser) {
-    throw conflictError();
+    throw conflictError("There's been an error");
   }
 
   const SALT = 10;

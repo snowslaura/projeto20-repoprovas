@@ -14,13 +14,13 @@ export async function createTest(testData:CreateTestData){
 async function verifyCategory(categoryId:number){
     const existingCategory = testRepository.findCategoryById(categoryId)
     if(!existingCategory){
-        throw notFoundError()
+        throw notFoundError("Category doesn't exist")
     }
 }
 
 async function verifyTeacherDiscipline(teacherDisciplineId:number){
     const existingTeacherDiscipline = testRepository.findTeacherDisciplineBYId(teacherDisciplineId)
     if(!existingTeacherDiscipline){
-        throw notFoundError()
+        throw notFoundError("This teacher discipline relation doesn't exists")
     }
 }
