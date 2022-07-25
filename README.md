@@ -58,13 +58,13 @@ $ npm run dev
       "categoryId":$número da id referente à categoria,</br>
       "teacherDisciplineId" : $número da id referente à realçaõ teacherDIsciplines</br>
     }</br>
-- GET /tests?groupBy=teachers(rota privada)</br>
+- GET /tests?groupBy=teachers (rota privada)</br>
     - Rota para o usuário buscar todas os testes da plataforma sepados por professor</br>
     - headers: {</br>
         "Authorization": "Bearer token"</br>
     }</br>
     - body: {}</br>    
-- GET /tests?groupBy=disciplines(rota privada)</br>
+- GET /tests?groupBy=disciplines (rota privada)</br>
     - Rota para o usuário buscar todas os testes da plataforma sepados por disciplina</br>
     - headers: {</br>
         "Authorization": "Bearer token"</br>
