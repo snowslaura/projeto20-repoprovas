@@ -1,7 +1,7 @@
 <h1>This is Repoprovas!  /  Este é Repoprovas!</h1>
 
 <h3>English</h3>
-<b>This is an API to support a website that joins tests so ths studantes can check to study</b></br>
+<b>This is an API to support a website that joins tests so that studantes can check to study</b></br>
 You can register, login, post a previous test, get all tests for a given subject or teacher</br>
 
 
