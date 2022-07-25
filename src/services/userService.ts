@@ -24,7 +24,6 @@ async function createUser(user: CreateUserData) {
 async function login(login: CreateUserData) {
   const user = await getUserOrFail(login);
   const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
-
   return token;
 }
 
